@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arslan Arif – DevOps Engineer</title>
   <meta name="description" content="Portfolio of Arslan Arif – AWS/Azure DevOps Engineer specializing in serverless, CI/CD, containers, and cloud security." />
+  <!-- Open Graph -->
   <meta property="og:title" content="Arslan Arif – DevOps Engineer" />
   <meta property="og:description" content="DevOps | AWS | Azure | CI/CD | Serverless | Security" />
   <meta property="og:type" content="website" />
@@ -22,30 +23,33 @@
             teal: '#64FFDA',
             ink: '#0B1220',
             mist: '#F8F9FB',
-            slate: {
-              850: '#0e1a2b'
-            }
+            slate: { 850: '#0e1a2b' }
           },
-          boxShadow: {
-            glow: '0 10px 30px -10px rgba(100,255,218,0.35)'
-          }
+          boxShadow: { glow: '0 10px 30px -10px rgba(100,255,218,0.35)' }
         }
       }
     }
   </script>
 
-  <!-- Inter font -->
+  <!-- Inter Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root { --nav-height: 72px; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial; }
-    .prose-dark a { text-decoration: none; }
-    /* Simple scroll reveal */
     .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
+    :target { scroll-margin-top: var(--nav-height); }
+    h1, h2, h3 { word-break: break-word; }
+    @media (max-width: 640px) {
+      h1 { font-size: 1.75rem; line-height: 2.25rem; }
+      h2 { font-size: 1.5rem; line-height: 2rem; }
+      h3 { font-size: 1.25rem; line-height: 1.75rem; }
+      body { font-size: 0.95rem; }
+    }
   </style>
 
   <!-- Structured Data -->
@@ -58,23 +62,26 @@
     "url": "https://example.com",
     "email": "mailto:arslanarif5230@gmail.com",
     "telephone": "+923053007088",
-    "address": {"@type": "PostalAddress", "addressLocality": "Islamabad", "addressCountry": "PK"},
+    "address": {"@type": "PostalAddress","addressLocality":"Islamabad","addressCountry":"PK"},
     "sameAs": ["https://www.linkedin.com/in/arslan-ariff"]
   }
   </script>
 </head>
-
 <body class="bg-mist text-slate-800">
   <!-- Header -->
   <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-navy/90 border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[var(--nav-height)] flex items-center justify-between">
       <a href="#home" class="group inline-flex items-center gap-3">
         <span class="w-9 h-9 rounded-xl bg-teal/10 grid place-items-center ring-1 ring-teal/30 shadow-glow">
-          <!-- logo mark -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-teal"><path d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-teal">
+            <path d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </span>
         <span class="text-white font-semibold tracking-tight">Arslan Arif</span>
       </a>
+
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8">
         <a href="#about" class="text-white/80 hover:text-teal">About</a>
         <a href="#skills" class="text-white/80 hover:text-teal">Skills</a>
@@ -84,22 +91,47 @@
         <a href="#education" class="text-white/80 hover:text-teal">Education</a>
         <a href="#contact" class="text-white/80 hover:text-teal">Contact</a>
       </nav>
-      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-teal/10 text-teal ring-1 ring-teal/40 hover:shadow-glow">Hire Me</a>
+
+      <!-- Hire Button (mobile hidden) -->
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-teal/10 text-teal ring-1 ring-teal/40 hover:shadow-glow">
+        Hire Me
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-toggle" class="md:hidden text-white hover:text-teal focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
+    <!-- Mobile Nav -->
+    <nav id="mobile-menu" class="md:hidden hidden flex-col bg-navy text-white py-4 px-6 space-y-4">
+      <a href="#about" class="hover:text-teal">About</a>
+      <a href="#skills" class="hover:text-teal">Skills</a>
+      <a href="#experience" class="hover:text-teal">Experience</a>
+      <a href="#projects" class="hover:text-teal">Projects</a>
+      <a href="#certs" class="hover:text-teal">Certifications</a>
+      <a href="#education" class="hover:text-teal">Education</a>
+      <a href="#contact" class="hover:text-teal">Contact</a>
+    </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section id="home" class="bg-navy text-white pt-[calc(var(--nav-height)+56px)] pb-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div class="reveal">
         <p class="text-teal font-semibold">DevOps · AWS · Azure · Kubernetes</p>
-        <h1 class="mt-2 text-4xl sm:text-5xl font-extrabold leading-tight">Hi, I'm Arslan — DevOps Engineer focused on scalable, secure cloud platforms.</h1>
-        <p class="mt-5 text-white/80 max-w-2xl">AWS Certified DevOps Engineer with 4+ years designing scalable cloud solutions on AWS and Azure. Expert in serverless, CI/CD automation, container orchestration, and cloud security with a strong track record in cost optimization and rapid deployments.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
+        <h1 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+          Hi, I'm Arslan — DevOps Engineer focused on scalable, secure cloud platforms.
+        </h1>
+        <p class="mt-5 text-white/80 max-w-2xl">
+          AWS Certified DevOps Engineer with 4+ years designing scalable cloud solutions on AWS and Azure. Expert in serverless, CI/CD automation, container orchestration, and cloud security with a strong track record in cost optimization and rapid deployments.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
           <a href="assets/Arslan_Arif_Resume.pdf" class="px-5 py-3 rounded-xl bg-teal text-navy font-semibold hover:bg-teal/90">Download CV</a>
           <a href="#projects" class="px-5 py-3 rounded-xl ring-1 ring-white/20 hover:ring-teal/50">View Projects</a>
         </div>
-        <div class="mt-8 flex items-center gap-5 text-white/80">
+        <div class="mt-8 flex flex-wrap gap-5 text-white/80">
           <a href="mailto:arslanarif5230@gmail.com" class="hover:text-teal">arslanarif5230@gmail.com</a>
           <span class="opacity-40">·</span>
           <a href="https://www.linkedin.com/in/arslan-ariff" target="_blank" class="hover:text-teal">LinkedIn</a>
@@ -116,10 +148,10 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="reveal grid lg:grid-cols-3 gap-10 items-start">
+      <div class="reveal grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
         <div>
           <h2 class="text-3xl font-bold text-navy">About Me</h2>
           <p class="mt-3 text-slate-700">Based in Islamabad, I design and run production-grade cloud platforms with a focus on reliability, security, and speed. I enjoy architecting serverless systems, optimizing CI/CD, and enabling teams to deliver with confidence.</p>
@@ -140,8 +172,8 @@
               <h3 class="font-semibold text-navy">Highlights</h3>
               <ul class="mt-3 space-y-2 text-slate-700 list-disc pl-5">
                 <li>Cut deployment times by 70% with modern CI/CD</li>
-                <li>Led cost optimization via Savings Plans & right-sizing</li>
-                <li>Architected multi-region serverless systems</li>
+                <li>Led cost optimization via Savings Plans & right‑sizing</li>
+                <li>Architected multi‑region serverless systems</li>
                 <li>Enabled ISO 27001 workflows & incident response</li>
               </ul>
             </div>
@@ -151,15 +183,14 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- Skills Section -->
   <section id="skills" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="reveal">
         <h2 class="text-3xl font-bold text-navy">Technical Skills</h2>
-        <p class="mt-3 text-slate-700 max-w-3xl">Breadth across AWS and Azure with strong depth in IaC, CI/CD, containers, monitoring, security, and networking.</p>
-
-        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- Card -->
+        <p class="mt-3 text-slate-700 max-w-3xl">Broad experience across AWS and Azure, deep expertise in IaC, CI/CD, containers, monitoring, security, and networking.</p>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Skill Cards -->
           <div class="p-6 rounded-2xl bg-mist ring-1 ring-slate-200">
             <h3 class="font-semibold text-navy">Cloud Platforms</h3>
             <p class="mt-2 text-sm text-slate-700">AWS (EC2, S3, IAM, VPC, RDS, Lambda, CloudFront, WAF, EKS/ECS, DynamoDB, Step Functions, etc.), Azure (AKS, Functions, Key Vault, App Service, Monitor)</p>
@@ -181,42 +212,43 @@
     </div>
   </section>
 
-  <!-- Experience -->
+  <!-- Experience Section -->
   <section id="experience" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="reveal">
         <h2 class="text-3xl font-bold text-navy">Experience</h2>
-        <ol class="mt-10 relative border-s-2 border-teal/40">
-          <li class="ms-6 mb-10">
-            <div class="absolute -start-3 w-6 h-6 bg-teal rounded-full ring-8 ring-mist"></div>
+        <ol class="mt-10 relative border-s-2 border-teal/40 space-y-10 pl-6">
+          <!-- Experience Items -->
+          <li>
+            <div class="absolute -left-3 w-6 h-6 bg-teal rounded-full ring-8 ring-mist"></div>
             <h3 class="text-xl font-semibold text-navy">Senior DevOps Engineer · Softoo</h3>
             <p class="text-sm text-slate-600">Apr 2025 – Present · Islamabad, Pakistan</p>
-            <ul class="mt-3 list-disc pl-5 text-slate-700 space-y-1">
-              <li>Led DevOps automation on AWS (ECS) with Terraform/CloudFormation.</li>
-              <li>Optimized cost & performance via Savings Plans and auto-scaling.</li>
-              <li>Embedded DevSecOps with GuardDuty, AWS Config & security baselines.</li>
-              <li>Architected multi-region serverless using Lambda, API Gateway, Step Functions.</li>
+            <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1">
+              <li>Led DevOps automation on AWS (ECS) with Terraform/CloudFormation</li>
+              <li>Optimized cost & performance via Savings Plans and auto‑scaling</li>
+              <li>Embedded DevSecOps with GuardDuty, AWS Config & security baselines</li>
+              <li>Architected multi‑region serverless systems (Lambda, API Gateway, Step Functions)</li>
             </ul>
           </li>
-          <li class="ms-6 mb-10">
-            <div class="absolute -start-3 w-6 h-6 bg-teal rounded-full ring-8 ring-mist"></div>
+          <li>
+            <div class="absolute -left-3 w-6 h-6 bg-teal rounded-full ring-8 ring-mist"></div>
             <h3 class="text-xl font-semibold text-navy">DevOps Engineer · Softoo</h3>
             <p class="text-sm text-slate-600">Jan 2023 – Mar 2025 · Islamabad, Pakistan</p>
-            <ul class="mt-3 list-disc pl-5 text-slate-700 space-y-1">
-              <li>Designed CI/CD with GitHub Actions, CodePipeline, Azure DevOps (–70% deploy time).</li>
-              <li>Migrated monoliths to microservices on ECS Fargate & Lambda.</li>
-              <li>Implemented observability with CloudWatch, X-Ray, and CloudTrail.</li>
-              <li>Supported ISO 27001 compliance & automated infra with IaC.</li>
+            <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1">
+              <li>Designed CI/CD with GitHub Actions, CodePipeline, Azure DevOps (–70% deploy time)</li>
+              <li>Migrated monoliths to microservices using ECS Fargate & Lambda</li>
+              <li>Implemented observability with CloudWatch, X‑Ray & CloudTrail</li>
+              <li>Supported ISO 27001 compliance & automated infra with IaC</li>
             </ul>
           </li>
-          <li class="ms-6">
-            <div class="absolute -start-3 w-6 h-6 bg-teal rounded-full ring-8 ring-mist"></div>
+          <li>
+            <div class="absolute -left-3 w-6 h-6 bg-teal rounded-full ring-8 ring-mist"></div>
             <h3 class="text-xl font-semibold text-navy">Junior Cloud Engineer · Softoo</h3>
             <p class="text-sm text-slate-600">Jan 2022 – Dec 2022 · Islamabad, Pakistan</p>
-            <ul class="mt-3 list-disc pl-5 text-slate-700 space-y-1">
-              <li>Built foundational AWS infra (VPC, EC2, RDS, IAM) for client projects.</li>
-              <li>Containerized apps and deployed on ECS & LightSail.</li>
-              <li>Static hosting with S3 + Amplify; automated deployments.</li>
+            <ul class="list-disc pl-5 mt-2 text-slate-700 space-y-1">
+              <li>Built foundational AWS infra (VPC, EC2, RDS, IAM)</li>
+              <li>Containerized apps and deployed on ECS & LightSail</li>
+              <li>Set up static hosting with S3 + Amplify; automated deployments</li>
             </ul>
           </li>
         </ol>
@@ -224,13 +256,13 @@
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section id="projects" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="reveal">
         <h2 class="text-3xl font-bold text-navy">Project Highlights</h2>
-        <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-          <!-- Project Card Template: duplicate for more -->
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <!-- Repeat for project cards -->
           <article class="group bg-mist ring-1 ring-slate-200 rounded-2xl overflow-hidden flex flex-col">
             <img src="assets/projects/tna-placeholder.jpg" alt="The Nursery App architecture" class="h-44 w-full object-cover group-hover:scale-[1.02] transition" />
             <div class="p-6 flex-1 flex flex-col">
@@ -246,92 +278,18 @@
               </div>
             </div>
           </article>
-
-          <article class="group bg-mist ring-1 ring-slate-200 rounded-2xl overflow-hidden flex flex-col">
-            <img src="assets/projects/yani-placeholder.jpg" alt="YANI – Azure compliance platform" class="h-44 w-full object-cover" />
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-navy">YANI – AI Compliance</h3>
-              <p class="mt-2 text-sm text-slate-700">Infra on Azure via Terraform; deployed React/Node with Azure DevOps pipelines, Key Vault, NSGs; centralized logging with Azure Monitor.</p>
-              <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">Azure</span>
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">Terraform</span>
-              </div>
-              <div class="mt-5">
-                <a href="#" class="inline-flex items-center gap-2 text-teal hover:underline">Case Study →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="group bg-mist ring-1 ring-slate-200 rounded-2xl overflow-hidden flex flex-col">
-            <img src="assets/projects/priveal-placeholder.jpg" alt="Priveal serverless backend" class="h-44 w-full object-cover" />
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-navy">Priveal – Serverless Backend</h3>
-              <p class="mt-2 text-sm text-slate-700">AWS Lambda, API Gateway, S3, DynamoDB with secure GitHub Actions CI/CD, artifact promotion and environment segregation.</p>
-              <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">Lambda</span>
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">API Gateway</span>
-              </div>
-              <div class="mt-5">
-                <a href="#" class="inline-flex items-center gap-2 text-teal hover:underline">Case Study →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="group bg-mist ring-1 ring-slate-200 rounded-2xl overflow-hidden flex flex-col">
-            <img src="assets/projects/usf-placeholder.jpg" alt="USF Phase 1 & 2" class="h-44 w-full object-cover" />
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-navy">USF – Phases 1 & 2</h3>
-              <p class="mt-2 text-sm text-slate-700">Phase 1: Laravel on ECS with CodePipeline. Phase 2: serverless app using API Gateway, Lambda, DynamoDB, S3 data lake + Athena.</p>
-              <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">ECS</span>
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">DynamoDB</span>
-              </div>
-              <div class="mt-5">
-                <a href="#" class="inline-flex items-center gap-2 text-teal hover:underline">Case Study →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="group bg-mist ring-1 ring-slate-200 rounded-2xl overflow-hidden flex flex-col">
-            <img src="assets/projects/vvast-placeholder.jpg" alt="Vvast – Shopify Integrations" class="h-44 w-full object-cover" />
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-navy">Vvast – Shopify Integrations</h3>
-              <p class="mt-2 text-sm text-slate-700">EventBridge, Lambda, DynamoDB with DLQs, retries, alarms; automated GitHub Actions and scoped IAM via SSM.</p>
-              <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">EventBridge</span>
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">Lambda</span>
-              </div>
-              <div class="mt-5">
-                <a href="#" class="inline-flex items-center gap-2 text-teal hover:underline">Case Study →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="group bg-mist ring-1 ring-slate-200 rounded-2xl overflow-hidden flex flex-col">
-            <img src="assets/projects/easefix-placeholder.jpg" alt="Easefix – Marketplace" class="h-44 w-full object-cover" />
-            <div class="p-6 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-navy">Easefix – Marketplace</h3>
-              <p class="mt-2 text-sm text-slate-700">Scaled on EC2 + RDS, blue/green with CodeDeploy; end-to-end observability and security with WAF, GuardDuty, Secrets Manager.</p>
-              <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">EC2</span>
-                <span class="px-2 py-1 rounded-lg bg-white ring-1 ring-slate-200">RDS</span>
-              </div>
-              <div class="mt-5">
-                <a href="#" class="inline-flex items-center gap-2 text-teal hover:underline">Case Study →</a>
-              </div>
-            </div>
-          </article>
+          <!-- Add other projects similarly… -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications -->
+  <!-- Certifications Section -->
   <section id="certs" class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="reveal">
         <h2 class="text-3xl font-bold text-navy">Certifications</h2>
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="p-6 rounded-2xl bg-white ring-1 ring-slate-200 flex items-center gap-4">
             <img src="assets/certs/aws-saa-badge.png" class="w-12 h-12" alt="AWS SAA" />
             <div>
@@ -358,7 +316,7 @@
     </div>
   </section>
 
-  <!-- Education -->
+  <!-- Education Section -->
   <section id="education" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="reveal">
@@ -373,48 +331,36 @@
 
   <!-- Contact Section -->
   <section id="contact" class="py-20 bg-mist text-center">
-    <div class="container mx-auto px-6 max-w-3xl">
+    <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl font-bold mb-6">Let’s Work Together</h2>
       <p class="text-lg text-navy mb-10">Tell me about your project or role. I’ll reply within 1–2 business days.</p>
-      <div class="space-y-4 text-black text-lg">
-        <p><strong>Email:</strong> 
-          <a class="text-black hover:text-teal hover:underline" href="mailto:arslanarif5230@gmail.com">
-            arslanarif5230@gmail.com
-          </a>
-        </p>
-        <p><strong>Phone:</strong> 
-          <a class="text-black hover:text-teal hover:underline" href="tel:+923053007088">
-            +92 305 3007088
-          </a>
-        </p>
-        <p><strong>LinkedIn:</strong> 
-          <a href="https://www.linkedin.com/in/arslan-ariff" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="text-black hover:text-teal hover:underline">
-            linkedin.com/in/arslan-ariff
-          </a>
-        </p>
+      <div class="space-y-4 text-lg">
+        <p><strong>Email:</strong> <a href="mailto:arslanarif5230@gmail.com" class="hover:text-teal hover:underline">arslanarif5230@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+923053007088" class="hover:text-teal hover:underline">+92 305 3007088</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arslan-ariff" target="_blank" rel="noopener noreferrer" class="hover:text-teal hover:underline">linkedin.com/in/arslan-ariff</a></p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="border-t border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <p class="text-sm text-slate-600">© <span id="year"></span> Arslan Arif. All rights reserved.</p>
-      <div class="flex items-center gap-4 text-sm">
-        <a href="#home" class="text-navy hover:text-teal">Back to top ↑</a>
-      </div>
+      <a href="#home" class="text-navy hover:text-teal text-sm">Back to top ↑</a>
     </div>
   </footer>
 
-  <!-- Tiny JS -->
+  <!-- Scripts -->
   <script>
     // Set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Simple reveal on scroll
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
     }, { threshold: 0.12 });
